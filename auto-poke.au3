@@ -13,7 +13,7 @@ Global $g_femalePixel = 0xE67BD8
 ; Monitor
 ; Assuming first monitor resolution is 1920 x 1080
 ; *** MAKE SURE TO CHANGE THIS ***
-Global $g_isMainMonitor = True;
+Global $g_isMainMonitor = False;
 
 ; Array to store current encounter pixels
 Global $g_aCurrentEncounter[2]
@@ -37,6 +37,7 @@ While (1)
 	  ; Check if it shiny Pokemon
 	  If _checkShiny() Then
 		 _exitShiny()
+		 WinClose("PokeOne")
 	  Else
 		 _runBattle()
 		 ;_killPokemon()
@@ -105,9 +106,9 @@ Func _moveUser()
    Send("{RIGHT up}")
 
    ;Move User down
-   Send("{DOWN down}")
-   Sleep(600)
-   Send("{DOWN up}")
+   ;Send("{DOWN down}")
+   ;Sleep(600)
+   ;Send("{DOWN up}")
 
    ;Move User left
    Send("{LEFT down}")
@@ -115,9 +116,9 @@ Func _moveUser()
    Send("{LEFT up}")
 
    ;Move User up
-   Send("{UP down}")
-   Sleep(300)
-   Send("{UP up}")
+   ;Send("{UP down}")
+   ;Sleep(300)
+   ;Send("{UP up}")
 EndFunc
 
 ; *********************************
